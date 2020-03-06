@@ -1,6 +1,6 @@
 package com.company;
 
-public class MyThread extends Thread {
+public class Runner extends Thread {
 
     public void run(){
 

@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-            MyThread th = new MyThread();
+            Runner th = new Runner();
                 th.start();
                 th.join();
     }
