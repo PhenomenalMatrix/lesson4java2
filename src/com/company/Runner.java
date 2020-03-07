@@ -47,11 +47,12 @@ public class Runner extends Thread {
                 }
             } else {
                 if (getRunnerIdBack() < 6 ) {
+                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
                     System.out.println(this.getName() + " берет палочку");
-                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
-               }if (getRunnerIdBack() == 5){
-                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
-                }
+                    if (getRunnerIdBack() == 5) {
+                        System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
+                    }
+               }
             }
             sleep(1000);
         } catch (InterruptedException ie) {
