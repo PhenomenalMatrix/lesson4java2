@@ -13,7 +13,7 @@ public class Main {
         }
         for (int i = 5; i > 1; i--) {
             Runner rn2 = new Runner("runner " + i);
-            rn2.setRunnerIdBack(i -1);
+            rn2.setRunnerIdBack(i - 1);
             rn2.setCode(1);
             rn2.start();
             rn2.join();
