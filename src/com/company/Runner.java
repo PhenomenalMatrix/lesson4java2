@@ -2,41 +2,61 @@ package com.company;
 
 public class Runner extends Thread {
 
-    public void run(){
 
-        for (int i = 1; i < 6 ; i++) {
+    public Runner(String name) {
+        super(name);
+    }
 
-        try{
-            if(i < 5 ){
+    private int runnerId;
+    private int runnerIdBack;
+    private int code;
 
-                System.out.println("Раннер   " + i + " берет палочку");
-                System.out.println("Раннер   "+ i +" передает палочку " + "Ранеру  " + (i + 1));
-            }else {
-                System.out.println("Раннер   " + i + " берет палочку");
-                System.out.println("Раннер  " + i + " перешел финиш");
-                if (i ==5){
-                    for (int j = 5; j > 0; j--) {
-                        if (j ==5 && j>0) {
-                        System.out.println("Раннер   " + j + " передает палочку " + "Ранеру  " + (j - 1));
-                        sleep(1000);
-                        } else if (j<5 && j!=1){
-                        System.out.println("Раннер   " + j + " берет палочку");
-                        System.out.println("Раннер   " + j + " передает палочку " + "Ранеру  " + (j - 1));
-                        sleep(1000);
+    public int getCode() {
+        return code;
+    }
 
-                        }else if (j == 1){
-                            System.out.println("Раннер   " + j + " берет палочку");
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-                        }
-                    }
+    public int getRunnerId() {
+        return runnerId;
+    }
 
+    public void setRunnerId(int runnerId) {
+        this.runnerId = runnerId;
+    }
+
+    public int getRunnerIdBack() {
+        return runnerIdBack;
+    }
+
+    public void setRunnerIdBack(int runnerIdBack) {
+        this.runnerIdBack = runnerIdBack;
+    }
+
+    public void run() {
+        try {
+            if (getCode() == 0) {
+                if (getRunnerId() == 6) {
+                    System.out.println(this.getName() + " берет палочку");
+                    System.out.println(this.getName() + " перешел финиш");
+                } else {
+                    System.out.println(this.getName() + " берет палочку");
+                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerId());
                 }
-
+            } else {
+                if (getRunnerIdBack() < 4) {
+                    System.out.println(this.getName() + " берет палочку");
+                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
+                }if (getRunnerIdBack() == 5){
+                    System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
+                }
             }
             sleep(1000);
-        }catch (InterruptedException ie){
+        } catch (InterruptedException ie) {
 
         }
+
     }
-  }
 }
