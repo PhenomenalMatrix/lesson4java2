@@ -46,10 +46,10 @@ public class Runner extends Thread {
                     System.out.println(this.getName() + " бежит к  раннеру " + getRunnerId());
                 }
             } else {
-                if (getRunnerIdBack() < 4) {
+                if (getRunnerIdBack() < 6 ) {
                     System.out.println(this.getName() + " берет палочку");
                     System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
-                }if (getRunnerIdBack() == 5){
+               }if (getRunnerIdBack() == 5){
                     System.out.println(this.getName() + " бежит к  раннеру " + getRunnerIdBack());
                 }
             }
